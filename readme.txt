@@ -4,6 +4,7 @@ What you can do with it:
  - Click to change the position of the larger circle
  - Control the position of the smaller circle by moving your cursor
  - Have the larger circle change color if it's colliding with the smaller circle
+ - Look at the red circle showing the closest point to the small circle
 
 How to build and run (on Debian 10):
  1. Have these packages: libsdl2-dev libsdl2-gfx-dev clang

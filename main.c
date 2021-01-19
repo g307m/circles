@@ -5,6 +5,7 @@
 #include <SDL2/SDL_pixels.h>
 #include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_render.h>
+#include <SDL2/SDL_stdinc.h>
 #include <SDL2/SDL_surface.h>
 #include <SDL2/SDL_timer.h>
 #include <SDL2/SDL_video.h>
@@ -14,6 +15,7 @@
 
 #include "maths.h"
 #include "shapes.h"
+#include "pushing.h"
 
 int
 main(int argc, char* argv[])
@@ -44,6 +46,9 @@ main(int argc, char* argv[])
 	Circle otherCircle = {
 		100,100,100
 	};
+	Circle circles[0xFF] = {&cursorCircle,&otherCircle};
+
+	Uint8 circlessize = 2;
 	Rectangle gr = {
 		0, 450, 640, 30
 	};
@@ -89,6 +94,9 @@ main(int argc, char* argv[])
 		}
 		Vec2 cst = ccr(cursorCircle, gr);
 		filledCircleRGBA(renderer, cst.x, cst.y, 10, 255, 0, 0, 255);
+
+		/* try to do the thing with the other circle */
+		Vec2 forces = pushall(0, &otherCircle, 1, &circles, circlessize, gr);
 
 		SDL_RenderPresent(renderer);
 	}
