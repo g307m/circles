@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-#include "circle.h"
+#include "shapes.h"
 
 int
 main(int argc, char* argv[])
@@ -76,6 +76,10 @@ main(int argc, char* argv[])
 			circleRGBA(renderer, otherCircle.x, otherCircle.y, otherCircle.r, 0,255,0,255);
 		}
 		circleRGBA(renderer, cursorCircle.x, cursorCircle.y, cursorCircle.r, 255,0,0,255);
+
+		/* heretic rectangle for ground */
+		rectangleRGBA(renderer, 0, 450, 640, 480, 255, 127, 0, 255);
+
 		SDL_RenderPresent(renderer);
 	}
 	

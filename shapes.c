@@ -1,4 +1,4 @@
-#include "circle.h"
+#include "shapes.h"
 
 #include <SDL2/SDL.h>
 #include <stdlib.h>
