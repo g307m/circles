@@ -6,7 +6,7 @@
 		{
 			"label": "debug",
 			"type": "shell",
-			"command": "clang -lSDL2 -lm -lSDL2_gfx -g main.c circle.c maths.c",
+			"command": "clang -lSDL2 -lm -lSDL2_gfx -g main.c shapes.c maths.c",
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",

@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 
+#include "maths.h"
 #include "shapes.h"
 
 int
@@ -42,6 +43,9 @@ main(int argc, char* argv[])
 	};
 	Circle otherCircle = {
 		100,100,100
+	};
+	Rectangle gr = {
+		0, 450, 640, 30
 	};
 
 	/* use window stuff */
@@ -78,7 +82,13 @@ main(int argc, char* argv[])
 		circleRGBA(renderer, cursorCircle.x, cursorCircle.y, cursorCircle.r, 255,0,0,255);
 
 		/* heretic rectangle for ground */
-		rectangleRGBA(renderer, 0, 450, 640, 480, 255, 127, 0, 255);
+		if (CollideCircleRectangle(cursorCircle, gr)) {
+			rectangleRGBA(renderer, gr.x, gr.y, gr.x+gr.w, gr.y+gr.h, 255, 0, 255, 255);
+		} else {
+			rectangleRGBA(renderer, gr.x, gr.y, gr.x+gr.w, gr.y+gr.h, 255, 127, 0, 255);
+		}
+		Vec2 cst = ccr(cursorCircle, gr);
+		filledCircleRGBA(renderer, cst.x, cst.y, 10, 255, 0, 0, 255);
 
 		SDL_RenderPresent(renderer);
 	}

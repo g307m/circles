@@ -15,6 +15,7 @@ Resources I've used:
  - https://wiki.libsdl.org/
  - https://suckless.org/coding_style/ (I could suck less at following this)
  - https://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/_s_d_l2__gfx_primitives_8h.html
+ - https://yal.cc/rectangle-circle-intersection-test/
 
 Development environment:
  - Debian 10 container on ChromeOS
